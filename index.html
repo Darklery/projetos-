@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registraintion Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', sans-serif;
+      }
+      
+      body{
+        background-color: #292929;
+      }
+
+      section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+      }
+
+      section aside{
+       background-color: #fff;
+       border-radius: 5px; 
+       width: 350px;
+       overflow: hidden;
+      }
+
+      section aside div#login,
+      section aside div#reg{
+        padding: 20px;
+        transition: 0.5s all ease-in-out;
+      }
+
+      form h2{
+        text-align: center;
+        margin-bottom: 10px;
+        color: #292929;
+        font-weight: 500;
+        font-size: 16px;
+        transition: 0.5s all ease-in-out;
+        cursor: pointer;
+      }
+
+      form h2 small{
+        font-size: 12px;
+        color: #f00;
+        transition: 0.5s all ease-in-out;
+      }
+
+      .show form h2{
+        font-size: 22px;
+      }
+
+      .show form h2 small {
+        font-size: 0;
+        color: transparent;
+      }
+
+      .form-group{
+        position: relative;
+        margin: 10px 0;
+      }
+
+      .form-group::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, #ffd900, #f00);
+      }
+
+      input[type = text],
+      input[type = password]{
+        width: 100%;
+        padding: 8px 0;
+        font-size: 16px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+      }
+
+      button[type = submit]{
+        width: 100%;
+        padding: 8px 0;
+        border: none;
+        background-color: #f00;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 5px;
+        margin-top: 10px; 
+        cursor: pointer;
+      }
+
+      section aside div#login {
+        background-color: #ffd900; 
+        clip-path: ellipse(350px 70px at 15% 8%); 
+        height: 35px;
+      }
+
+       section aside div#login.show {
+        background-color: #fff; 
+        clip-path: ellipse(350px 350px at 10% 50%); 
+        height: 200px;
+      }
+       section aside div#reg {
+        background-color: #ffd900; 
+        clip-path: ellipse(350px 60px at 80% 100%); 
+        height: 35px;
+      }
+
+      section aside div#reg.show {
+        background-color: #fff; 
+        clip-path: ellipse(350px 350px at 10% 50%); 
+        height: 270px;
+      }
+    </style>
+    <script>
+      function toggle(){
+        let login = document.getElementById('login');
+        let reg = document.getElementById('reg');
+        login.classList.toggle('show');
+        reg.classList.toggle('show');
+      }
+    </script> 
+  </head>
+<body>
+  <section>
+    <aside>
+      <div id="login" class="show">
+        <form action="">
+          <h2 onclick="toggle()"">login<br /><small>or</small></h2> 
+          <div class="form-group">
+            <input type="text" name="username" placeholder="Username" /> 
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" placeholder="Password" /> 
+          </div> 
+          <button type="submit">Login</button>
+        </form>
+      </div> 
+      <div id="reg">
+        <form action="">
+          <h2 onclick="toggle()"><small>or</small><br />signup</h2>
+          <div class="form-group">
+            <input type="text" name="fullname" placeholder="Full Name" /> 
+          </div>
+          <div class="form-group"> 
+            <input type="text" name="username" placeholder="Username" /> 
+          </div>
+          <div class="form-group">
+                      <input type="password" name="password" placeholder="Password" /> 
+          </div>
+          <button type="submit">Join Now</button>
+        </form>
+    </aside>
+  </section>
+</body>
+</html>
